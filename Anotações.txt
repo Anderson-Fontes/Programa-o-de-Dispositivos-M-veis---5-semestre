@@ -1,0 +1,51 @@
+Configurar um notebook novo (Windows) para rodar o projeto
+
+O caminho mínimo, rodando no navegador, dispensa o Android Studio.
+
+1. Instalar o que é necessário
+Git: baixe em git-scm.com e instale deixando as opções padrão. O Flutter exige.
+VS Code: baixe em code.visualstudio.com e instale.
+Navegador: o Edge já vem no Windows. O Chrome também serve.
+Flutter SDK:
+Baixe o SDK para Windows em docs.flutter.dev/get-started/install.
+Extraia em C:\src\flutter. Evite Program Files e pastas com espaço.
+Adicione C:\src\flutter\bin ao Path: menu Iniciar, “variáveis de ambiente”, Variáveis de Ambiente, selecione Path (do usuário), Editar, Novo e cole C:\src\flutter\bin.
+Feche e abra o terminal de novo.
+
+Alternativa: instale a extensão Flutter no VS Code (passo 2) e use Ctrl+Shift+P, Flutter: New Project. Se o SDK não for encontrado, ela oferece Download SDK e configura tudo sozinha.
+
+2. Configurar o VS Code
+Abra o VS Code, vá em Extensões (Ctrl+Shift+X), procure Flutter e instale. A extensão Dart vem junto.
+Reinicie o VS Code.
+3. Conferir a instalação
+
+No terminal, rode:
+
+flutter doctor
+
+Para rodar no navegador, o que importa é:
+
+✅ Flutter
+✅ Chrome ou Edge
+✅ VS Code
+
+Os itens do Android Studio e do Visual Studio podem aparecer com ❌ ou ⚠️ sem problema se você só for rodar no navegador.
+
+4. Criar ou abrir o projeto
+
+Projeto novo:
+
+Crie uma pasta simples, como C:\projetos, sem espaços nem parênteses.
+No VS Code, Ctrl+Shift+P, Flutter: New Project, Empty Application.
+Escolha a pasta e dê um nome em minúsculas, sem espaço.
+Cole o código em lib/main.dart e salve.
+
+Projeto que você já tem: copie a pasta flutter_application_1 para o notebook (pendrive, nuvem ou GitHub) e abra com File > Open Folder. Escolha a pasta que contém o pubspec.yaml. Depois, no terminal dentro dela, rode flutter pub get.
+
+5. Rodar
+
+No terminal do VS Code (Ctrl+'), dentro da pasta do projeto:
+
+flutter run -d edge
+
+Use -d chrome se preferir. A primeira execução demora porque baixa componentes.
